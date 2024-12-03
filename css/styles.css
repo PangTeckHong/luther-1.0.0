@@ -2923,25 +2923,18 @@ img.u-pull-left {
  *
  * ------------------------------------------------------------------- */
 
- .s-header {
-    --box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.06), 
-                  0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.06);
-    box-shadow: var(--box-shadow);
-    z-index: 100;
-    width: 100%;
-    position: fixed;
-    height: 80px; /* Adjusted height for the navbar */
-    top: 0;
-    left: 0;
-
-    /* Background image properties for dripping effect */
-    background-image: url('/luther-1.0.0/images/DrippingNav.png');
-    background-repeat: no-repeat;
-    background-position: center bottom; /* Align dripping design to the bottom */
-    background-size: contain; /* Scale image proportionally */
-    background-color: transparent; /* Ensure no extra background covers it */
+.s-header {
+    --box-shadow : 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.06), 0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.06);
+    box-shadow   : var(--box-shadow); /* Apply the custom box shadow */
+    z-index      : 100;
+    width        : 100%;
+    position     : fixed;
+    height       : 350px;
+    top          : 0;
+    left         : 0;
+    
+    /* Background image properties */
 }
-
 
 
 .header-mobile {
@@ -4253,63 +4246,105 @@ img.u-pull-left {
         right : 6vw;
     }
 }
-/* Navbar container */
+/* Navbar */
 .navbar {
     width: 100%;
-    background-color: #c25b00; /* Navbar color */
+    background-color: #c25b00; /* Navbar background color */
+    color: #ffffff;
     position: relative;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
-    color: #ffffff; /* Text color */
-    font-size: 18px;
+    padding: 15px 20px;
 }
 
-/* Drip Effect */
-.navbar::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; /* Adjust drip position */
-    left: 0;
-    width: 100%;
-    height: 60px; /* Drip height */
-    background-color: #c25b00; /* Match navbar color */
-    clip-path: polygon(0% 0%, 10% 100%, 20% 50%, 30% 100%, 40% 30%, 50% 100%, 60% 50%, 70% 100%, 80% 40%, 90% 100%, 100% 0%);
-    z-index: -1; /* Send drip to the back */
-}
-
-/* Navbar links */
+/* Navbar Links (Desktop) */
 .navbar-links {
     display: flex;
     gap: 30px;
 }
 
 .navbar-links a {
-    color: white;
     text-decoration: none;
+    color: white;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
-    color: #ffdd99; /* Highlight color */
+    color: #ffdd99; /* Highlighted color */
 }
 
-/* Responsive Design */
+/* Logo in Desktop Navbar */
+.navbar-logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-right: auto; /* Aligns logo to the left */
+}
+
+
+/* Mobile Header */
+.header-mobile {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #c25b00;
+}
+
+.header-mobile a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hamburger Menu */
+.mobile-menu-toggle {
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+}
+
+/* Navbar Dropdown (Mobile) */
+.navbar-dropdown {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px; /* Position below header */
+    left: 0;
+    width: 100%;
+    background-color: #c25b00;
+    padding: 10px 20px;
+    z-index: 9;
+}
+
+.navbar-dropdown a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-dropdown a:hover {
+    background-color: #ff6600;
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
-    .navbar-links {
-        gap: 15px;
+    .navbar {
+        display: none; /* Hide main navbar for mobile */
     }
 
-    .navbar-links a {
-        font-size: 16px;
+    .header-mobile {
+        display: flex; /* Show mobile header */
     }
-}
 
-@media screen and (max-width: 480px) {
-    .navbar-links {
-        flex-direction: column;
-        gap: 10px;
+    .navbar-dropdown.active {
+        display: flex; /* Show dropdown when active */
     }
 }

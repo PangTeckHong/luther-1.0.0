@@ -51,27 +51,37 @@
         </div>
 
 
-        <!-- ## site header 
-        ================================================== -->
-        <header class="s-header">
+<!-- ## site header 
+================================================== -->
+<header class="s-header">
+    <div class="header-mobile">
+        <span class="mobile-home-link"><a href="index.html">TeckHong.</a></span>
+        <a id="navbarToggle" class="mobile-menu-toggle" href="#0">
+            <span>Menu</span>
+        </a>
+    </div>
 
-            <div class="header-mobile">
-                <span class="mobile-home-link"><a href="index.html">TeckHong.</a></span>
-                <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
-            </div>
+    <div class="navbar">
+        <a href="index.html" class="navbar-logo">TeckHong.</a>
+        <nav class="navbar-links">
+            <a href="#intro" class="smoothscroll current">Home</a>
+            <a href="#about" class="smoothscroll">About</a>
+            <a href="#works" class="smoothscroll">Works</a>
+            <a href="#contact" class="smoothscroll">Say Hello</a>
+        </nav>
+    </div>
 
-            <div class="navbar">
-                <nav class="column lg-12 main-nav navbar-links">
-                    <a href="index.html" class="home-link">TeckHong.</a>
-                    <a href="#intro" class="smoothscroll current">Home</a>
-                    <a href="#about" class="smoothscroll">About</a>
-                    <a href="#works" class="smoothscroll">Works</a>
-                    <a href="#contact" class="smoothscroll">Say Hello</a>
-                </nav>
-            </div>
-            
+    <div class="navbar-dropdown">
+        <a href="#intro" class="smoothscroll current">Home</a>
+        <a href="#about" class="smoothscroll">About</a>
+        <a href="#works" class="smoothscroll">Works</a>
+        <a href="#contact" class="smoothscroll">Say Hello</a>
+    </div>
+</header>
 
-        </header> <!-- end s-header -->
+
+ <!-- end s-header -->
+
 
 
         <!-- ## main content
@@ -663,6 +673,12 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
+    <script>
+        document.getElementById('navbarToggle').addEventListener('click', function () {
+            const navbarDropdown = document.querySelector('.navbar-dropdown');
+            navbarDropdown.classList.toggle('active');
+        });
+    </script>
+    
 </body>
 </html>
