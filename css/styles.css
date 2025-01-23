@@ -2929,7 +2929,6 @@ img.u-pull-left {
     z-index      : 100;
     width        : 100%;
     position     : fixed;
-    height       : 350px;
     top          : 0;
     left         : 0;
     
@@ -3095,7 +3094,7 @@ img.u-pull-left {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 200px) {
     .s-header {
         height : var(--header-height);
     }
